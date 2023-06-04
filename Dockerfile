@@ -1,10 +1,10 @@
-FROM alpine:latest
+FROM debian
 MAINTAINER LanCache.Net Team <team@lancache.net>
 
 ENV UPSTREAM_DNS 8.8.8.8 8.8.4.4
 
-RUN	apk update \
-	&& apk add sniproxy
+RUN	apt update \
+	&& apt install sniproxy
 
 COPY overlay/ /
 
